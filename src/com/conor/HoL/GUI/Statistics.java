@@ -16,7 +16,7 @@ import com.conor.HoL.Statistics.User;
 
 public class Statistics {
 	private JFrame statsFrame;
-	private JPanel statsPanel;
+	private JPanel statsPanel, leaderPanel;
 	private JTabbedPane statsPane;
 	private JLabel correctLbl, wrongLbl, highScoreLbl, gamesPlayedLbl;
 	private JComboBox<String> userCombo;
@@ -39,6 +39,11 @@ public class Statistics {
 		wrongLbl = new JLabel("Wrong");
 		highScoreLbl = new JLabel("High Score");
 		gamesPlayedLbl = new JLabel("Games Played");
+		
+		statsPane = new JTabbedPane();
+		
+		statsPane.addTab("Statistics", statsPanel);
+		statsPane.addTab("Leaderboards", leaderPanel);
 		
 		statsPanel.add(correctLbl);
 		statsPanel.add(wrongLbl);
@@ -80,7 +85,7 @@ public class Statistics {
 		addFields();
 		populateCombo();
 		
-		statsFrame.add(statsPanel);
+		statsFrame.add(statsPane);
 		statsFrame.setVisible(true);
 	}
 }

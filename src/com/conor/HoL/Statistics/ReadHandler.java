@@ -20,7 +20,16 @@ public class ReadHandler {
 
 	public ArrayList<User> readUsers(){
 		Scanner fileScan = null;
-		users = new File("Users/").listFiles();
+
+		try{
+			users = new File("Users/").listFiles();
+		} catch(NullPointerException e){
+			new File("Users/").mkdir();
+		} finally {
+			users = new File("Users/").listFiles();
+		}
+
+
 		for(File user : users){
 			try {
 				fileScan = new Scanner(user);

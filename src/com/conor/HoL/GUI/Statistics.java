@@ -56,9 +56,9 @@ public class Statistics {
 					currUser = userList.get(userCombo.getSelectedIndex());
 					
 					correctLbl.setText("Correct Guesses: " + Integer.toString(currUser.getCorrect()));
-					wrongLbl.setText("Wrong Guesses: " + Integer.toString(currUser.getCorrect()));
-					highScoreLbl.setText("High Score: " + Integer.toString(currUser.getCorrect()));
-					gamesPlayedLbl.setText("Games Played: " + Integer.toString(currUser.getCorrect()));
+					wrongLbl.setText("Wrong Guesses: " + Integer.toString(currUser.getWrong()));
+					highScoreLbl.setText("High Score: " + Integer.toString(currUser.getHighScore()));
+					gamesPlayedLbl.setText("Games Played: " + Integer.toString(currUser.getGamesPlayed()));
 				}
 			}
 		});

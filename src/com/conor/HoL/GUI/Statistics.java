@@ -23,6 +23,7 @@ public class Statistics {
 	
 	private ArrayList<User> userList;
 	private User currUser = null;
+	private int index = 0;
 	
 	public void createForm(){
 		statsFrame = new JFrame("Statistics");
@@ -30,11 +31,19 @@ public class Statistics {
 		statsFrame.setSize(1024, 768);
 		UITools.centreFrame(statsFrame);
 		
-		statsPanel = new JPanel(new GridLayout(1,0));
+		statsPanel = new JPanel(new GridLayout(5,1));
 	}
 	
 	public void addFields(){
+		correctLbl = new JLabel("Correct");
+		wrongLbl = new JLabel("Wrong");
+		highScoreLbl = new JLabel("High Score");
+		gamesPlayedLbl = new JLabel("Games Played");
 		
+		statsPanel.add(correctLbl);
+		statsPanel.add(wrongLbl);
+		statsPanel.add(highScoreLbl);
+		statsPanel.add(gamesPlayedLbl);
 	}
 	
 	public void addButtons(){
@@ -45,6 +54,11 @@ public class Statistics {
 				System.out.println(userCombo.getSelectedIndex());
 				if(userCombo.getSelectedIndex() != -1){
 					currUser = userList.get(userCombo.getSelectedIndex());
+					
+					correctLbl.setText("Correct Guesses: " + Integer.toString(currUser.getCorrect()));
+					wrongLbl.setText("Wrong Guesses: " + Integer.toString(currUser.getCorrect()));
+					highScoreLbl.setText("High Score: " + Integer.toString(currUser.getCorrect()));
+					gamesPlayedLbl.setText("Games Played: " + Integer.toString(currUser.getCorrect()));
 				}
 			}
 		});
@@ -63,6 +77,7 @@ public class Statistics {
 		
 		createForm();
 		addButtons();
+		addFields();
 		populateCombo();
 		
 		statsFrame.add(statsPanel);

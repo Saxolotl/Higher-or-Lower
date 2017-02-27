@@ -54,11 +54,6 @@ public class WriteHandler {
 		dataWrite = new BufferedWriter(write);
 		getStats();
 		
-		System.out.println(correctGuesses);
-		System.out.println(wrongGuesses);
-		System.out.println(highScore);
-		System.out.println(gamesPlayed);
-		
 		writeData(correctGuesses);
 		writeData(wrongGuesses);
 		writeData(highScore);

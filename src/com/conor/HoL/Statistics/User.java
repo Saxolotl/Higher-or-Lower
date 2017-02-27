@@ -1,6 +1,6 @@
 package com.conor.HoL.Statistics;
 
-public class User {
+public class User{
 	private String name;
 	private int correctGuesses;
 	private int wrongGuesses;

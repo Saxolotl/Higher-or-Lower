@@ -30,6 +30,7 @@ public class UITools {
 	    {
 	        Object key = keys.nextElement();
 	        Object value = UIManager.get(key);
+	        
 	        if (value instanceof javax.swing.plaf.FontUIResource)
 	        {
 	            UIManager.put(key, f);

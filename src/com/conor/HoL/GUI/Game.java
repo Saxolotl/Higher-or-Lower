@@ -5,27 +5,23 @@ import com.conor.HoL.Statistics.User;
 import com.conor.HoL.Statistics.WriteHandler;
 
 import java.awt.Color;
-import java.awt.Component;
-import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 public class Game {
 
 	private JFrame gameFrame;
-	private JPanel gamePanel, btnPanel, imagePanel;
+	private JPanel gamePanel, btnPanel;
 	private JButton high, low;
 	private JLabel logoPicture, scoreLbl;
 	private ImageIcon logo;

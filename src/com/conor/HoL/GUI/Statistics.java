@@ -5,7 +5,6 @@ import java.awt.GridLayout;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 
 import javax.swing.JComboBox;
@@ -27,7 +26,6 @@ public class Statistics {
 	
 	private ArrayList<User> userList;
 	private User currUser = null;
-	private int index = 0;
 	
 	public void createForm(){
 		statsFrame = new JFrame("Statistics");

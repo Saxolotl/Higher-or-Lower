@@ -19,6 +19,7 @@ import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
@@ -143,18 +144,20 @@ public class Menu {
 			for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
 				if ("Nimbus".equals(info.getName())) {
 					UIManager.setLookAndFeel(info.getClassName());
+					UIManager.put("nimbusBase", new Color(0,0,100));
+					UIManager.put("control", new Color(60,60,60));
+					UIManager.put("text", new Color(255,255,255));
+					UIManager.put("nimbusLightBackground", new Color(100,100,100));
+					UITools.setUIFont(new FontUIResource(new Font("Sans Serif", Font.PLAIN, 18)));
 					break;
 				}
 			}
 		} catch (Exception e) {
-			// If Nimbus is not available, you can set the GUI to another look and feel.
+			JOptionPane.showMessageDialog(menuFrame, "An error occured while setting the theme. Default theme is in use.", "Theme error", JOptionPane.ERROR_MESSAGE);
+			
 		}
 
-		UIManager.put("nimbusBase", new Color(0,0,100));
-		UIManager.put("control", new Color(60,60,60));
-		UIManager.put("text", new Color(255,255,255));
-		UIManager.put("nimbusLightBackground", new Color(100,100,100));
-		UITools.setUIFont(new FontUIResource(new Font("Sans Serif", Font.PLAIN, 18)));
+		
 	}
 
 	public void addUser(){
